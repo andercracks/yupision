@@ -4,6 +4,11 @@ const clicksText = document.getElementById("clicks");
 const cpsText = document.getElementById("cps");
 const timeText = document.getElementById("time");
 const bestScore = document.getElementById("bestScore");
+
+const finalResult = document.getElementById("finalResult");
+const finalClicks = document.getElementById("finalClicks");
+const finalCPS = document.getElementById("finalCPS");
+
 const modeButtons = document.querySelectorAll(".mode");
 const restartButton = document.getElementById("restartButton");
 
@@ -34,7 +39,7 @@ modeButtons.forEach(button => {
 
 });
 
-// Cargar récord
+// el record
 let best = localStorage.getItem("bestCPS");
 
 if(best == null){
@@ -65,13 +70,13 @@ clickButton.addEventListener("click", () => {
 
                 clickButton.disabled = true;
 
-                const finalCPS = (clicks / gameTime).toFixed(1);
+                const score = (clicks / gameTime).toFixed(1);
 
-                cpsText.textContent = finalCPS;
+                cpsText.textContent = score;
 
-                if(finalCPS > best){
+                if(score > best){
 
-                    best = finalCPS;
+                    best = score;
 
                     localStorage.setItem("bestCPS", best);
 
@@ -79,11 +84,9 @@ clickButton.addEventListener("click", () => {
 
                 }
 
-                setTimeout(() => {
-
-                    alert("🎉 Tiempo terminado\n\nClicks: " + clicks + "\nCPS: " + finalCPS);
-
-                },200);
+                    finalResult.style.display = "block";
+                    finalClicks.textContent = clicks;
+                    finalCPS.textContent = score;
 
             }
 
@@ -94,8 +97,9 @@ clickButton.addEventListener("click", () => {
     clicks++;
 
     clicksText.textContent = clicks;
+});
 
-    restartButton.addEventListener("click", () => {
+restartButton.addEventListener("click", () => {
 
         clearInterval(interval);
 
@@ -108,7 +112,5 @@ clickButton.addEventListener("click", () => {
         timeText.textContent = gameTime;
 
         clickButton.disabled = false;
-
-    });
 
 });
