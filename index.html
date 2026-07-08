@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Click Tester</title>
+
+        <script async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>⚡ Click Tester</h1>
+            <p class="subtitle">Test your clicking speed</p>
+
+            <div class="stats">
+
+                <div class="card">
+                    <h2 id="cps">0.0</h2>
+                    <span>CPS</span>
+                </div>
+
+                <div class="card">
+                    <h2 id="clicks">0</h2>
+                    <span>Clicks</span>
+                </div>
+
+                <div class="card">
+                    <h2 id="time">10</h2>
+                    <span>Seconds</span>
+                </div>
+
+            </div>
+
+            <button id="clickButton">
+                CLICK ME
+            </button>
+
+            <div class="modes">
+
+                <button class="mode" data-time="5">5s</button>
+                <button class="mode active" data-time="10">10s</button>
+                <button class="mode" data-time="15">15s</button>
+                <button class="mode" data-time="30">30s</button>
+                <button class="mode" data-time="60">60s</button>
+
+            </div>
+
+            <button id="restartButton">
+                Restart
+            </button>
+
+            <div class="result">
+
+                <h3>Best Score</h3>
+
+                <p id="bestScore">
+                    0 CPS
+                </p>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
