@@ -12,80 +12,88 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-
-        <div class="container">
-
-            <h1>⚡ Click Tester</h1>
-            <p class="subtitle">Test your clicking speed</p>
-
-            <div class="stats">
-
-                <div class="card">
-                    <h2 id="cps">0.0</h2>
-                    <span>CPS</span>
+        <div class="layout">
+            <aside class="left-ad">
+                <!-- Futuro anuncio -->
+            </aside>
+            <div class="container">
+    
+                <h1>⚡ Click Tester</h1>
+                <p class="subtitle">Test your clicking speed</p>
+    
+                <div class="stats">
+    
+                    <div class="card">
+                        <h2 id="cps">0.0</h2>
+                        <span>CPS</span>
+                    </div>
+    
+                    <div class="card">
+                        <h2 id="clicks">0</h2>
+                        <span>Clicks</span>
+                    </div>
+    
+                    <div class="card">
+                        <h2 id="time">10</h2>
+                        <span>Seconds</span>
+                    </div>
+    
                 </div>
-
-                <div class="card">
-                    <h2 id="clicks">0</h2>
-                    <span>Clicks</span>
+    
+                <button id="clickButton">
+                    CLICK ME
+                </button>
+    
+                <div class="modes">
+    
+                    <button class="mode" data-time="5">5s</button>
+                    <button class="mode active" data-time="10">10s</button>
+                    <button class="mode" data-time="15">15s</button>
+                    <button class="mode" data-time="30">30s</button>
+                    <button class="mode" data-time="60">60s</button>
+    
                 </div>
-
-                <div class="card">
-                    <h2 id="time">10</h2>
-                    <span>Seconds</span>
+    
+                <button id="restartButton">
+                    Restart
+                </button>
+    
+                <div class="result">
+                
+                    <h3>Best Score</h3>
+                    <p id="bestScore">0 CPS</p>
+                
+                    <div id="finalResult" style="display:none; margin-top:20px;">
+                
+                        <h2>🎉 Time's Up!</h2>
+                
+                        <p>Total Clicks: <span id="finalClicks">0</span></p>
+                
+                        <p>Final CPS: <span id="finalCPS">0.0</span></p>
+                
+                    </div>
+                
                 </div>
-
+                
             </div>
 
-            <button id="clickButton">
-                CLICK ME
-            </button>
-
-            <div class="modes">
-
-                <button class="mode" data-time="5">5s</button>
-                <button class="mode active" data-time="10">10s</button>
-                <button class="mode" data-time="15">15s</button>
-                <button class="mode" data-time="30">30s</button>
-                <button class="mode" data-time="60">60s</button>
-
-            </div>
-
-            <button id="restartButton">
-                Restart
-            </button>
-
-            <div class="result">
-            
-                <h3>Best Score</h3>
-                <p id="bestScore">0 CPS</p>
-            
-                <div id="finalResult" style="display:none; margin-top:20px;">
-            
-                    <h2>🎉 Time's Up!</h2>
-            
-                    <p>Total Clicks: <span id="finalClicks">0</span></p>
-            
-                    <p>Final CPS: <span id="finalCPS">0.0</span></p>
-            
-                </div>
-            
-            </div>
+            <aside class="right-ad">
+                <!-- Futuro anuncio -->
+            </aside>
             
         </div>
 
-        <script src="script.js"></script>
-
+                <footer>
+    
+                    <p>© 2026 ClickTester</p>
+            
+                    <a href="about.html">Acerca de</a> |
+                    <a href="privacy.html">Política de privacidad</a> |
+                    <a href="contact.html">Contact@</a>
+            
+                </footer>
+        
+            <script src="script.js"></script>
     </body>
-
-        <footer>
-    
-            <p>© 2026 ClickTester</p>
-    
-            <a href="about.html">Acerca de</a> |
-            <a href="privacy.html">Política de privacidad</a> |
-            <a href="contact.html">Contact@</a>
-    
-        </footer>
-    
+   
 </html>
