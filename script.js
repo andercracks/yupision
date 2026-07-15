@@ -12,6 +12,9 @@ const finalCPS = document.getElementById("finalCPS");
 const modeButtons = document.querySelectorAll(".mode");
 const restartButton = document.getElementById("restartButton");
 
+const customTime = document.getElementById("customTime");
+const applyTime = document.getElementById("applyTime");
+
 let gameTime = 10;
 
 let clicks = 0;
@@ -36,6 +39,31 @@ modeButtons.forEach(button => {
         timeText.textContent = gameTime;
 
     });
+
+});
+
+applyTime.addEventListener("click", () => {
+
+    if (timerStarted) return;
+
+    const value = parseInt(customTime.value);
+
+    if (isNaN(value)) {
+        alert("Ingresa un tiempo válido.");
+        return;
+    }
+
+    if (value < 1 || value > 300) {
+        alert("El tiempo debe estar entre 1 y 300 segundos.");
+        return;
+    }
+
+    modeButtons.forEach(btn => btn.classList.remove("active"));
+
+    gameTime = value;
+    timeLeft = value;
+
+    timeText.textContent = value;
 
 });
 
