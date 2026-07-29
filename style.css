@@ -370,6 +370,67 @@ h1{
 
 }
 
+/* el de doubleclick o doble click */
+#doubleClickButton{
+
+    width:250px;
+
+    height:250px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    transition:.15s;
+
+    margin-bottom:35px;
+
+}
+
+#doubleClickButton:hover{
+
+    transform:scale(1.05);
+
+}
+
+#doubleClickButton:active{
+
+    transform:scale(.95);
+
+}
+
+#rating{
+
+    margin-top:15px;
+
+    font-size:30px;
+
+    color:#38bdf8;
+
+}
+
+#resultTime{
+
+    margin-top:10px;
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+}
+
 @media(max-width:500px){
 
     .container{
@@ -386,7 +447,7 @@ h1{
     
     }
     
-    #clickButton{
+    #clickButton, #doubleClickButton{
     
     width:200px;
     
