@@ -37,6 +37,28 @@ if(best === null){
 
 button.addEventListener("click", () => {
 
+    if(!timerStarted){
+
+        timerStarted = true;
+    
+        interval = setInterval(() => {
+    
+            timeLeft--;
+    
+            timeText.textContent = timeLeft;
+    
+            if(timeLeft <= 0){
+    
+                clearInterval(interval);
+    
+                button.disabled = true;
+    
+            }
+    
+        },1000);
+    
+    }
+    
     const now = Date.now();
 
     if(!waitingSecondClick){
@@ -99,28 +121,56 @@ button.addEventListener("click", () => {
     });
 
     applyTime.addEventListener("click", () => {
-        if(timerStarted) return;
-        const value = parseInt(customTime.value);
-        if(isNaN(value) || value < 1 || value > 300){
-            alert("Choose a value between 1 and 300.");
-            return;
-        }
+            if(timerStarted) return;
+            const value = parseInt(customTime.value);
+            if(isNaN(value) || value < 1 || value > 300){
+                alert("Choose a value between 1 and 300.");
+                return;
+            }
+        
+            modeButtons.forEach(btn => btn.classList.remove("active"));
+            gameTime = value;
+            timeLeft = gameTime;
+            timeText.textContent = gameTime;
+        
+        });
     
-        modeButtons.forEach(btn => btn.classList.remove("active"));
-        gameTime = value;
-        timeLeft = gameTime;
-        timeText.textContent = gameTime;
+        if(best === null || time < parseInt(best)){
+    
+            best = time;
+    
+            localStorage.setItem("bestDoubleClick", best);
+    
+            bestTime.textContent = best + " ms";
+    
+        }
     
     });
 
-    if(best === null || time < parseInt(best)){
-
-        best = time;
-
-        localStorage.setItem("bestDoubleClick", best);
-
-        bestTime.textContent = best + " ms";
-
-    }
-
-});
+    restartButton.addEventListener("click", () => {
+    
+        clearInterval(interval);
+    
+        timerStarted = false;
+    
+        timeLeft = gameTime;
+    
+        firstClick = 0;
+    
+        waitingSecondClick = false;
+    
+        totalDoubleClicks = 0;
+    
+        clickTime.textContent = "0 ms";
+    
+        doubleClicks.textContent = 0;
+    
+        rating.textContent = "Waiting...";
+    
+        resultTime.textContent = "Double click to start.";
+    
+        timeText.textContent = gameTime;
+    
+        button.disabled = false;
+    
+    });
