@@ -34,35 +34,79 @@
                 <h2 id="doubleClicks">0</h2>
                 <span>Double Clicks</span>
             </div>
-
+        
             <div class="card">
-                <h2 id="clickTime">0 ms</h2>
-                <span>Time</span>
+                <h2 id="bestTime">0 ms</h2>
+                <span>Best Time</span>
             </div>
-
+        
             <div class="card">
-                <h2 id="bestTime">--</h2>
-                <span>Best</span>
+                <h2 id="time">10</h2>
+                <span>Seconds</span>
             </div>
-
+        
         </div>
 
         <button id="doubleClickButton">
             🖱️ DOUBLE CLICK HERE
         </button>
 
+        <div class="modes">
+
+            <button class="mode" data-time="5">5s</button>
+            <button class="mode active" data-time="10">10s</button>
+            <button class="mode" data-time="15">15s</button>
+            <button class="mode" data-time="30">30s</button>
+            <button class="mode" data-time="60">60s</button>
+        
+        </div>
+
+        <div class="custom-time">
+
+            <input
+                type="number"
+                id="customTime"
+                placeholder="Seconds"
+                min="1"
+                max="300">
+        
+            <button id="applyTime">
+                Apply
+            </button>
+        
+            <button id="restartButton">
+                Restart
+            </button>
+        
+        </div>
+        
         <div class="result">
 
-            <h3>Result</h3>
-
-            <h2 id="rating">
-                Waiting...
-            </h2>
-
-            <p id="resultTime">
-                Double click to start.
-            </p>
-
+            <h3>Best Record</h3>
+        
+            <p id="bestScore">0 ms</p>
+        
+            <div id="finalResult" style="display:none; margin-top:20px;">
+        
+                <h2>🎉 Time's Up!</h2>
+        
+                <p>
+                    Double Clicks:
+                    <span id="finalDoubleClicks">0</span>
+                </p>
+        
+                <p>
+                    Best Time:
+                    <span id="finalBestTime">0 ms</span>
+                </p>
+        
+                <p>
+                    Average Time:
+                    <span id="finalAverage">0 ms</span>
+                </p>
+        
+            </div>
+        
         </div>
 
         <div class="tools">
