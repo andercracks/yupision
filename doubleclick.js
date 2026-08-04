@@ -142,7 +142,7 @@ button.addEventListener("click", () => {
             bestTime.textContent = best + " ms";
     
         }
-    
+    customTime.value = "";
  });
 
     restartButton.addEventListener("click", () => {
