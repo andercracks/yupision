@@ -1,7 +1,6 @@
 const button = document.getElementById("doubleClickButton");
 
 const doubleClicks = document.getElementById("doubleClicks");
-const clickTime = document.getElementById("clickTime");
 const bestTime = document.getElementById("bestTime");
 
 const rating = document.getElementById("rating");
@@ -34,6 +33,48 @@ if(best === null){
     bestTime.textContent = best + " ms";
 
 }
+
+     modeButtons.forEach(button => {
+            button.addEventListener("click", () => {
+        
+                if(timerStarted) return;
+        
+                modeButtons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+                gameTime = parseInt(button.dataset.time);
+                timeLeft = gameTime;
+                timeText.textContent = gameTime;
+        
+             });
+        });
+
+    applyTime.addEventListener("click", () => {
+            if(timerStarted) return;
+            const value = parseInt(customTime.value);
+            if(isNaN(value) || value < 1 || value > 300){
+                alert("Choose a value between 1 and 300.");
+                return;
+            }
+        
+            modeButtons.forEach(btn => btn.classList.remove("active"));
+            gameTime = value;
+            timeLeft = gameTime;
+            timeText.textContent = gameTime;
+        
+        });
+    
+        if(best === null || time < parseInt(best)){
+    
+            best = time;
+    
+            localStorage.setItem("bestDoubleClick", best);
+    
+            bestTime.textContent = best + " ms";
+    
+        }
+    
+    });
+
 
 button.addEventListener("click", () => {
 
@@ -80,7 +121,6 @@ button.addEventListener("click", () => {
     totalDoubleClicks++;
 
     doubleClicks.textContent = totalDoubleClicks;
-    clickTime.textContent = time + " ms";
     resultTime.textContent = time + " ms";
 
     if(time < 200){
@@ -104,48 +144,6 @@ button.addEventListener("click", () => {
         rating.textContent = "🔴 Slow";
 
     }
-    
-    });
-
-        modeButtons.forEach(button => {
-            button.addEventListener("click", () => {
-        
-                if(timerStarted) return;
-        
-                modeButtons.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
-                gameTime = parseInt(button.dataset.time);
-                timeLeft = gameTime;
-                timeText.textContent = gameTime;
-        
-         });
-
-    applyTime.addEventListener("click", () => {
-            if(timerStarted) return;
-            const value = parseInt(customTime.value);
-            if(isNaN(value) || value < 1 || value > 300){
-                alert("Choose a value between 1 and 300.");
-                return;
-            }
-        
-            modeButtons.forEach(btn => btn.classList.remove("active"));
-            gameTime = value;
-            timeLeft = gameTime;
-            timeText.textContent = gameTime;
-        
-        });
-    
-        if(best === null || time < parseInt(best)){
-    
-            best = time;
-    
-            localStorage.setItem("bestDoubleClick", best);
-    
-            bestTime.textContent = best + " ms";
-    
-        }
-    
-    });
 
     restartButton.addEventListener("click", () => {
     
@@ -160,8 +158,6 @@ button.addEventListener("click", () => {
         waitingSecondClick = false;
     
         totalDoubleClicks = 0;
-    
-        clickTime.textContent = "0 ms";
     
         doubleClicks.textContent = 0;
     
