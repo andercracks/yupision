@@ -17,6 +17,7 @@ let gameTime = 10;
 let timeLeft = gameTime;
 let timerStarted = false;
 let interval;
+timeText.textContent = gameTime;
 
 // el mejor tiempo se guarda 
 let best = localStorage.getItem("bestDoubleClick");
@@ -57,6 +58,7 @@ if(best === null){
             gameTime = value;
             timeLeft = gameTime;
             timeText.textContent = gameTime;
+            customTime.value = "";
         
     });
     
@@ -77,7 +79,8 @@ console.log("Click detectado");
             if(timeLeft <= 0){
     
                 clearInterval(interval);
-    
+
+                timerStarted = false;
                 button.disabled = true;
     
             }
@@ -98,6 +101,7 @@ console.log("Click detectado");
         }
     
         const time = now - firstClick;
+        firstClick = 0;
     
         waitingSecondClick = false;
     
