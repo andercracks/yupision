@@ -66,7 +66,7 @@ if(best === null){
 
 
 button.addEventListener("click", () => {
-
+console.log("Click detectado");
     if(!timerStarted){
 
         timerStarted = true;
