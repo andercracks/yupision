@@ -104,21 +104,21 @@ button.addEventListener("click", () => {
         rating.textContent = "🔴 Slow";
 
     }
-
-    modeButtons.forEach(button => {
-        button.addEventListener("click", () => {
-    
-            if(timerStarted) return;
-    
-            modeButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-            gameTime = parseInt(button.dataset.time);
-            timeLeft = gameTime;
-            timeText.textContent = gameTime;
-    
-        });
     
     });
+
+        modeButtons.forEach(button => {
+            button.addEventListener("click", () => {
+        
+                if(timerStarted) return;
+        
+                modeButtons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+                gameTime = parseInt(button.dataset.time);
+                timeLeft = gameTime;
+                timeText.textContent = gameTime;
+        
+         });
 
     applyTime.addEventListener("click", () => {
             if(timerStarted) return;
