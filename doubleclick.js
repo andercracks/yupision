@@ -3,9 +3,6 @@ const button = document.getElementById("doubleClickButton");
 const doubleClicks = document.getElementById("doubleClicks");
 const bestTime = document.getElementById("bestTime");
 
-const rating = document.getElementById("rating");
-const resultTime = document.getElementById("resultTime");
-
 const timeText = document.getElementById("time");
 const modeButtons = document.querySelectorAll(".mode");
 const restartButton = document.getElementById("restartButton");
@@ -96,9 +93,6 @@ console.log("Click detectado");
             firstClick = now;
             waitingSecondClick = true;
     
-            rating.textContent = "Waiting...";
-            resultTime.textContent = "Click again!";
-    
             return;
 
         }
@@ -110,29 +104,7 @@ console.log("Click detectado");
         totalDoubleClicks++;
     
         doubleClicks.textContent = totalDoubleClicks;
-        resultTime.textContent = time + " ms";
     
-        if(time < 200){
-    
-            rating.textContent = "🟢 Excellent";
-    
-        }else if(time < 300){
-    
-            rating.textContent = "🔵 Very Good";
-    
-        }else if(time < 500){
-    
-            rating.textContent = "🟡 Good";
-    
-        }else if(time < 700){
-    
-            rating.textContent = "🟠 Average";
-    
-        }else{
-    
-            rating.textContent = "🔴 Slow";
-    
-        }
         if(best === null || time < parseInt(best)){
     
             best = time;
@@ -160,10 +132,6 @@ console.log("Click detectado");
         totalDoubleClicks = 0;
     
         doubleClicks.textContent = 0;
-    
-        rating.textContent = "Waiting...";
-    
-        resultTime.textContent = "Double click to start.";
     
         timeText.textContent = gameTime;
     
