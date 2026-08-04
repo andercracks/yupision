@@ -100,50 +100,61 @@ button.addEventListener("click", () => {
     
     }
     
-    const now = Date.now();
+        const now = Date.now();
+    
+        if(!waitingSecondClick){
+    
+            firstClick = now;
+            waitingSecondClick = true;
+    
+            rating.textContent = "Waiting...";
+            resultTime.textContent = "Click again!";
+    
+            return;
 
-    if(!waitingSecondClick){
-
-        firstClick = now;
-        waitingSecondClick = true;
-
-        rating.textContent = "Waiting...";
-        resultTime.textContent = "Click again!";
-
-        return;
-
-    }
-
-    const time = now - firstClick;
-
-    waitingSecondClick = false;
-
-    totalDoubleClicks++;
-
-    doubleClicks.textContent = totalDoubleClicks;
-    resultTime.textContent = time + " ms";
-
-    if(time < 200){
-
-        rating.textContent = "🟢 Excellent";
-
-    }else if(time < 300){
-
-        rating.textContent = "🔵 Very Good";
-
-    }else if(time < 500){
-
-        rating.textContent = "🟡 Good";
-
-    }else if(time < 700){
-
-        rating.textContent = "🟠 Average";
-
-    }else{
-
-        rating.textContent = "🔴 Slow";
-
-    }
+        }
+    
+        const time = now - firstClick;
+    
+        waitingSecondClick = false;
+    
+        totalDoubleClicks++;
+    
+        doubleClicks.textContent = totalDoubleClicks;
+        resultTime.textContent = time + " ms";
+    
+        if(time < 200){
+    
+            rating.textContent = "🟢 Excellent";
+    
+        }else if(time < 300){
+    
+            rating.textContent = "🔵 Very Good";
+    
+        }else if(time < 500){
+    
+            rating.textContent = "🟡 Good";
+    
+        }else if(time < 700){
+    
+            rating.textContent = "🟠 Average";
+    
+        }else{
+    
+            rating.textContent = "🔴 Slow";
+    
+        }
+        if(best === null || time < parseInt(best)){
+    
+            best = time;
+    
+            localStorage.setItem("bestDoubleClick", best);
+    
+            bestTime.textContent = best + " ms";
+    
+        }
+    
+ });
 
     restartButton.addEventListener("click", () => {
     
