@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spacebar Test</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6783067256794096"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="left-ad">
+        <!-- Future Ad -->
+    </aside>
+
+    <div class="container">
+
+        <h1>⌨️ Spacebar Test</h1>
+
+        <p class="subtitle">
+            Test your spacebar pressing speed
+        </p>
+
+        <div class="stats">
+
+            <div class="card">
+                <h2 id="presses">0</h2>
+                <span>Presses</span>
+            </div>
+
+            <div class="card">
+                <h2 id="pps">0.0</h2>
+                <span>PPS</span>
+            </div>
+
+            <div class="card">
+                <h2 id="time">10</h2>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+        <div id="spaceArea">
+            ⌨️<br>
+            PRESS SPACEBAR
+        </div>
+
+        <div class="modes">
+
+            <button class="mode" data-time="5">5s</button>
+            <button class="mode active" data-time="10">10s</button>
+            <button class="mode" data-time="15">15s</button>
+            <button class="mode" data-time="30">30s</button>
+            <button class="mode" data-time="60">60s</button>
+
+        </div>
+
+        <div class="custom-time">
+
+            <input
+                type="number"
+                id="customTime"
+                placeholder="Seconds"
+                min="1"
+                max="300">
+
+            <button id="applyTime">
+                Apply
+            </button>
+
+            <button id="restartButton">
+                Restart
+            </button>
+
+        </div>
+
+        <div class="result">
+
+            <h3>Best Score</h3>
+
+            <p id="bestScore">0 PPS</p>
+
+            <div id="finalResult" style="display:none; margin-top:20px;">
+
+                <h2>🎉 Time's Up!</h2>
+
+                <p>
+                    Total Presses:
+                    <span id="finalPresses">0</span>
+                </p>
+
+                <p>
+                    Final PPS:
+                    <span id="finalPPS">0.0</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="tools">
+
+            <h2>🧪 More Tools</h2>
+
+            <p class="tools-subtitle">
+                Try our other free testing tools.
+            </p>
+
+            <div class="tools-grid">
+
+                <a href="index.html" class="tool-card">
+                    <h3>🖱️ Click Speed Test</h3>
+                    <p>Measure your CPS.</p>
+                    <span>Open →</span>
+                </a>
+
+                <a href="doubleclick.html" class="tool-card">
+                    <h3>🖱️ Double Click Test</h3>
+                    <p>Measure your double-click speed.</p>
+                    <span>Open →</span>
+                </a>
+
+                <a href="reactime.html" class="tool-card">
+                    <h3>🎯 Reaction Test</h3>
+                    <p>Measure your reaction time.</p>
+                    <span>Open →</span>
+                </a>
+
+                <a href="keyboard.html" class="tool-card">
+                    <h3>⌨️ Keyboard Test</h3>
+                    <p>Check every key.</p>
+                    <span>Open →</span>
+                </a>
+
+                <a href="dragclick.html" class="tool-card">
+                    <h3>🖱️ Drag Click Test</h3>
+                    <p>Measure drag clicking.</p>
+                    <span>Open →</span>
+                </a>
+
+                <a href="jitterclick.html" class="tool-card">
+                    <h3>🔥 Jitter Click Test</h3>
+                    <p>Test your jitter clicking.</p>
+                    <span>Open →</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <footer>
+
+            <p>© 2026 ClickTester</p>
+
+            <a href="about.html">About</a> |
+            <a href="privacy.html">Privacy</a> |
+            <a href="contact.html">Contact</a>
+
+        </footer>
+
+    </div>
+
+    <aside class="right-ad">
+        <!-- Future Ad -->
+    </aside>
+
+</div>
+
+<script src="spacebartest.js"></script>
+
+</body>
+</html>
