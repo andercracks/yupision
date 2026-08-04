@@ -61,19 +61,8 @@ if(best === null){
             timeLeft = gameTime;
             timeText.textContent = gameTime;
         
-        });
-    
-        if(best === null || time < parseInt(best)){
-    
-            best = time;
-    
-            localStorage.setItem("bestDoubleClick", best);
-    
-            bestTime.textContent = best + " ms";
-    
-        }
-    
     });
+    
 
 
 button.addEventListener("click", () => {
