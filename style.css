@@ -544,3 +544,191 @@ h1{
     }
 
 }
+
+/* para About - Privacy - Contact */
+
+.page{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.page-body{
+    display:block;
+    min-height:100vh;
+    background: linear-gradient(135deg,#111827,#1f2937);
+    color:white;
+}
+
+.page h1{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:40px;
+
+}
+
+.page h2{
+
+    margin-top:35px;
+
+    margin-bottom:15px;
+
+    color:#00c6ff;
+
+    font-size:28px;
+
+}
+
+.page p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.page ul{
+
+    margin-left:25px;
+
+    color:#d1d5db;
+
+    line-height:1.9;
+
+}
+
+.page li{
+
+    margin-bottom:10px;
+
+}
+
+.navbar{
+
+    max-width:1000px;
+
+    margin:30px auto;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+    font-size:34px;
+    font-weight:bold;
+    color:#00c6ff;
+    text-decoration:none;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:30px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#00c6ff;
+
+}
+
+footer{
+
+    margin:40px 0;
+
+    text-align:center;
+
+    color:#bdbdbd;
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .page{
+
+        margin:20px;
+
+        padding:25px;
+
+    }
+
+    .page h1{
+
+        font-size:32px;
+
+    }
+
+    .page h2{
+
+        font-size:24px;
+
+    }
+
+}
