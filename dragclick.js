@@ -1,4 +1,4 @@
-const button = document.getElementById("dragClickButton");
+const button = document.getElementById("dragButton");
 
 const clicksText = document.getElementById("dragClicks");
 const cpsText = document.getElementById("cps");
