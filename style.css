@@ -501,6 +501,13 @@ h1{
 
 }
 
+.keyboard-page .container{
+
+    width: 950px;
+    max-width: 95%;
+
+}
+
 @media(max-width:500px){
 
     .container{
