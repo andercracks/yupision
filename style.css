@@ -431,6 +431,76 @@ h1{
 
 }
 
+/* para keyboardtest */
+
+.keyboard{
+
+    margin:30px 0;
+
+}
+
+.row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:6px;
+
+    margin-bottom:6px;
+
+}
+
+.key{
+
+    min-width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#334155;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    transition:.15s;
+
+    user-select:none;
+
+}
+
+.wide{
+
+    min-width:70px;
+
+}
+
+.extra-wide{
+
+    min-width:90px;
+
+}
+
+.space{
+
+    width:260px;
+
+}
+
+.key.active{
+
+    background:#22c55e;
+
+    transform:scale(1.08);
+
+}
+
 @media(max-width:500px){
 
     .container{
